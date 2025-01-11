@@ -12,8 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        greatVibes: ['"Great Vibes"', "cursive"], 
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
