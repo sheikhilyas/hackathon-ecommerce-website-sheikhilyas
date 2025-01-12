@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = () => {
+export default function Footer () {
   const recentPosts = [
     {
       title: 'Is fastfood good for your body?',
@@ -108,6 +108,5 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
-export default Footer;

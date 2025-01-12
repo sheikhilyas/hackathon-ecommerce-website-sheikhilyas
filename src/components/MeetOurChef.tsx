@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const MeetOurChef = () => {
+export default function MeetOurChef () {
   const chefs = [
     { name: 'D.Estwood', title: 'Chief Chef', image: '/image20.png' },
     { name: 'D.Scoriesh', title: 'Assistant Chef', image: '/image21.png' },
@@ -37,6 +37,6 @@ const MeetOurChef = () => {
       </div>
     </div>
   );
-};
+}
 
-export default MeetOurChef;
+

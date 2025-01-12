@@ -3,7 +3,7 @@ import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { GiHamburger } from "react-icons/gi";
 import { PiChefHatDuotone } from "react-icons/pi";
 
-function StartSection() {
+export default function StartSection() {
   return (
     <div className=" bg-black relative py-10">
       <div className="container mx-auto text-center text-white">
@@ -14,8 +14,8 @@ function StartSection() {
             backgroundImage: "url('/image25.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '100%', 
-            opacity: 0.2,  
+            height: '100%',
+            opacity: 0.2,
           }}
         ></div>
 
@@ -53,4 +53,4 @@ function StartSection() {
   );
 }
 
-export default StartSection;
+

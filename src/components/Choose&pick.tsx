@@ -1,8 +1,7 @@
 "use client";
-
 import React, { useState } from "react";
 
-const ChoosePick = () => {
+export default function ChoosePick  () {
   const categories = [
     "Breakfast",
     "Lunch",
@@ -67,7 +66,7 @@ const ChoosePick = () => {
       name: "Mushaom Pizza",
       description: "Lacus nisl, et ac dapibus velit in consequat.",
       price: "12.5$",
-      image: "/image33.png", // Replace with your image path
+      image: "/image33.png", 
       category: "Breakfast",
     },
   ];
@@ -123,6 +122,4 @@ const ChoosePick = () => {
       </div>
     </div>
   );
-};
-
-export default ChoosePick;
+}

@@ -1,6 +1,6 @@
 "use client";
 
-const PartnersClients = () => {
+export default function PartnersClients() {
   return (
     <section className="bg-white py-10">
       <div className="text-center mb-8">
@@ -55,6 +55,5 @@ const PartnersClients = () => {
       </div>
     </section>
   );
-};
+}
 
-export default PartnersClients;

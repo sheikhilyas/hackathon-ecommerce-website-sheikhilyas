@@ -11,7 +11,7 @@ export default function Testimonial() {
       <div className="max-w-4xl mx-auto bg-white text-black p-8 rounded-lg shadow-lg relative">
         <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
           <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white">
-          <Image src="/image27.png" alt="Profile" width={80} height={80} />
+            <Image src="/image27.png" alt="Profile" width={80} height={80} />
 
           </div>
         </div>

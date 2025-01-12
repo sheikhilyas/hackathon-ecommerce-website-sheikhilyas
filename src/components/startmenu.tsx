@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-function StartMenu() {
+export default function StartMenu() {
   const menuItems = [
     {
       title: "Alder Grilled Chinook Salmon",
@@ -75,4 +75,4 @@ function StartMenu() {
   );
 }
 
-export default StartMenu;
+

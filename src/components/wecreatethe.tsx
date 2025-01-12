@@ -1,7 +1,8 @@
 import React from 'react';
 import { Great_Vibes } from 'next/font/google';
 const VibeFont = Great_Vibes({ subsets: ['latin'], weight: ['400'] });
-const About = () => {
+
+export default function About () {
     return (
         <div>
             <section className="bg-black text-white py-16 px-4 md:px-8">
@@ -80,6 +81,6 @@ const About = () => {
             </section>
         </div>
     );
-};
+}
 
-export default About;
+

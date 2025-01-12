@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Product = () => {
+export default function Product() {
   const products = [
     { name: 'Burger', price: 35.0, quantity: 1, total: 221.0, image: '/image53.png' },
     { name: 'Fresh Lime', price: 25.0, quantity: 1, total: 521.0, image: '/image54.png' },
@@ -80,6 +80,6 @@ const Product = () => {
       </table>
     </div>
   );
-};
+}
 
-export default Product ;
+

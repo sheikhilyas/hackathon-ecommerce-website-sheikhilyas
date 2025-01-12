@@ -4,12 +4,12 @@ import Shopdetails from "@/components/shopdetails";
 import SimilarProducts from "@/components/SimilarProducts";
 
 export default function ShopDetails() {
-    return (
-      <div>
-      <Shopdetails/>
-      <ProductCard/>
-      <DescriptionTab/>
-      <SimilarProducts/>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Shopdetails />
+      <ProductCard />
+      <DescriptionTab />
+      <SimilarProducts />
+    </div>
+  );
+}

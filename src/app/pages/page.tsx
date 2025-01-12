@@ -1,12 +1,9 @@
-
-
-export default function Pages(){
-    return(
-        <div className="bg-black">
-
-            
+export default function Pages() {
+    return (
+        <div>
+            page
         </div>
-    )
+    );
 }
 
 

@@ -4,8 +4,7 @@ export default function Pages() {
     return (
         <div >
            <FAQ/>
-
         </div>
-    )
+    );
 }
 

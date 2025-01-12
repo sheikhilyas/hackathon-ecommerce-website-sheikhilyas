@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const VibeFont = Great_Vibes({ subsets: ["latin"], weight: ["400"] });
 
-const BlogPost = () => {
+export default function BlogPost () {
   const blogPosts = [
     { id: 1, image: "/image16.png", date: "10 February 2022" },
     { id: 2, image: "/image17.png", date: "10 February 2022" },
@@ -61,6 +61,5 @@ const BlogPost = () => {
       </div>
     </div>
   );
-};
+}
 
-export default BlogPost;

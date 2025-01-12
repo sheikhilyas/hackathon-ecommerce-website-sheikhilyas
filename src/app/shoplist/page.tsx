@@ -6,5 +6,5 @@ export default function shop(){
         <Ourshop/>
         <ShopPage/>
       </div>
-    )
+    );
   }

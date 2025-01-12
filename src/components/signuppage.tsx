@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
-function Signuppage() {
+export default function Signuppage() {
   return (
     <section className='w-full bg-[url("/image24.png")] bg-cover bg-no-repeat bg-center py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28'>
       <div className='container mx-auto px-4'>
@@ -21,7 +21,5 @@ function Signuppage() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default  Signuppage;

@@ -1,3 +1,4 @@
+
 export default function ProductCard() {
     return (
       <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-white text-black p-4">

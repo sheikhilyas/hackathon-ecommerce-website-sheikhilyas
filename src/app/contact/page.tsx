@@ -1,11 +1,9 @@
 import React from 'react'
 
-function page() {
+export default function contactpage() {
   return (
     <div>
-      sunny
+      contact page
     </div>
-  )
+  );
 }
-
-export default page;

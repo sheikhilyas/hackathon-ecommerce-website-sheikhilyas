@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-const Header = () => {
+export default function Header () {
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
 
   const toggleShopDropdown = () => {
@@ -173,6 +173,6 @@ const Header = () => {
       </nav>
     </section>
   );
-};
+}
 
-export default Header;
+

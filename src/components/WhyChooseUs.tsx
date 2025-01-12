@@ -6,7 +6,7 @@ import { Great_Vibes } from 'next/font/google';
 
 const VibeFont = Great_Vibes({ subsets: ['latin'], weight: ['400'] });
 
-const WhyChooseUs = () => {
+export default function WhyChooseUs () {
     return (
         <section className="bg-black text-white py-16 px-8">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -112,6 +112,6 @@ const WhyChooseUs = () => {
             </div>
         </section>
     );
-};
+}
 
-export default WhyChooseUs;
+

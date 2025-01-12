@@ -4,11 +4,10 @@ import { Inter } from 'next/font/google';
 import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
 import { Great_Vibes } from 'next/font/google';
 
-
 const VibeFont = Great_Vibes({ subsets: ['latin'], weight: ['400'] });
 const InterFont = Inter({ subsets: ['latin'] });
 
-const Navebar = () => {
+export default function Navebar() {
     return (
         <div className="bg-black min-h-screen w-full">
             {/* Header Section */}
@@ -79,6 +78,6 @@ const Navebar = () => {
             </div>
         </div>
     );
-};
+}
 
-export default Navebar;
+

@@ -1,5 +1,6 @@
 import React from 'react';
-const SupportSection = () => {
+
+export default function SupportSection () {
     return (
       <div className="flex items-center justify-between bg-black px-10 py-10">
         {/* Left Section */}
@@ -27,7 +28,7 @@ const SupportSection = () => {
         </div>
       </div>
     );
-  };
+  }
   
-  export default SupportSection;
+  
   

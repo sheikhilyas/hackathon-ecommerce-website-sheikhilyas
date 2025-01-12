@@ -2,7 +2,7 @@ import React from 'react';
 import { Great_Vibes } from 'next/font/google';
 
 const VibeFont = Great_Vibes({ subsets: ['latin'], weight: ['400'] });
-const FoodCategory = () => {
+export default function FoodCategory () {
   return (
     <section className="bg-black text-white py-12  justify-center sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
@@ -84,6 +84,6 @@ const FoodCategory = () => {
       </div>
     </section>
   );
-};
+}
 
-export default FoodCategory;
+

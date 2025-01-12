@@ -98,7 +98,7 @@ export default function CheckoutPage() {
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <img
-                src="/image84.png" 
+                src="/image84.png"
                 alt="Chicken Tikka Kabab"
                 className="w-16 h-16 rounded"
               />

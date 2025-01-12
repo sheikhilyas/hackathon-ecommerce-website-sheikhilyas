@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Shoppingcontent = () => {
+export default function Shoppingcontent () {
   return (
     <div className="w-full bg-white text-black p-6 flex justify-between gap-4">
       {/* Coupon Code Section */}
@@ -54,6 +54,5 @@ const Shoppingcontent = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Shoppingcontent;
