@@ -9,7 +9,7 @@ export default function SupportSection () {
             Still You Need Our Support?
           </h2>
           <p className="text-sm md:text-lg text-gray-500">
-            Don't wait, make a smart & logical quote here. It's pretty easy.
+            Don&apos;t wait, make a smart &amp; logical quote here. It&apos;s pretty easy.
           </p>
           {/* Line extends dynamically */}
           <div className=" h-0.5 bg-orange-500 flex-grow " />
@@ -28,7 +28,4 @@ export default function SupportSection () {
         </div>
       </div>
     );
-  }
-  
-  
-  
+}

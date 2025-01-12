@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; 
 
 export default function CheckoutPage() {
   return (
@@ -97,10 +98,12 @@ export default function CheckoutPage() {
           <h2 className="text-xl font-bold mb-4">Order Summary</h2>
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <img
+              <Image
                 src="/image84.png"
                 alt="Chicken Tikka Kabab"
-                className="w-16 h-16 rounded"
+                width={64} // width and height should be set for Next.js Image component
+                height={64}
+                className="rounded"
               />
               <div>
                 <h3>Chicken Tikka Kabab</h3>
@@ -109,10 +112,12 @@ export default function CheckoutPage() {
               </div>
             </div>
             <div className="flex items-center justify-between">
-              <img
+              <Image
                 src="/image84.png"
                 alt="Chicken Tikka Kabab"
-                className="w-16 h-16 rounded"
+                width={64}
+                height={64}
+                className="rounded"
               />
               <div>
                 <h3>Chicken Tikka Kabab</h3>
@@ -121,10 +126,12 @@ export default function CheckoutPage() {
               </div>
             </div>
             <div className="flex items-center justify-between">
-              <img
+              <Image
                 src="/image84.png"
                 alt="Chicken Tikka Kabab"
-                className="w-16 h-16 rounded"
+                width={64}
+                height={64}
+                className="rounded"
               />
               <div>
                 <h3>Chicken Tikka Kabab</h3>

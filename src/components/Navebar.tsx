@@ -1,11 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import { Inter } from 'next/font/google';
 import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
 import { Great_Vibes } from 'next/font/google';
 
 const VibeFont = Great_Vibes({ subsets: ['latin'], weight: ['400'] });
-const InterFont = Inter({ subsets: ['latin'] });
 
 export default function Navebar() {
     return (
@@ -44,7 +42,7 @@ export default function Navebar() {
                                     It's Quick & Amusing!
                                 </p>
                                 <h1 className="font-bold text-4xl sm:text-5xl lg:text-7xl text-white mb-6 leading-tight">
-                                    <span className="text-[#FF9F0D]">Th</span>e Art of Speed
+                                    <span className="text-[#FF9F0D]">Th&apos;e</span> Art of Speed
                                     <br /> Food Quality
                                 </h1>
                                 <p className="text-gray-300 text-lg mb-8 max-w-md">
@@ -79,5 +77,3 @@ export default function Navebar() {
         </div>
     );
 }
-
-

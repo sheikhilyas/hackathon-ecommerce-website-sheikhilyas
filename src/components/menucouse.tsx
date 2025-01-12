@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Menucouse() {
   return (
@@ -46,7 +47,13 @@ export default function Menucouse() {
       </div>
 
       <div className="flex-none w-1/3 p-4 flex justify-center items-center">
-        <img src="/image12.png" alt="Menu Highlight" className="w-[448px] h-[626px] object-cover rounded-lg shadow-lg" />
+        <Image
+          src="/image12.png"
+          alt="Menu Highlight"
+          width={448}  
+          height={626} 
+          className="object-cover rounded-lg shadow-lg"
+        />
       </div>
     </div>
   );

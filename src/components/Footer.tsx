@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Footer () {
   const recentPosts = [
@@ -74,10 +75,12 @@ export default function Footer () {
           <ul className="space-y-4">
             {recentPosts.map((post, index) => (
               <li key={index} className="flex items-center space-x-3">
-                <img
+                <Image
                   src={post.imgSrc}
                   alt={post.title}
-                  className="w-12 h-12 object-cover rounded"
+                  width={48}  
+                  height={48} 
+                  className="object-cover rounded"
                 />
                 <div>
                   <a href="#" className="hover:text-white">{post.title}</a>
@@ -96,10 +99,12 @@ export default function Footer () {
           <div className="flex space-x-4 mt-4 md:mt-0">
             {socialIcons.map((icon) => (
               <a href={icon.href} key={icon.name} className="hover:text-white">
-                <img
+                <Image
                   src={icon.src}
                   alt={icon.name}
-                  className="w-10 h-10 rounded-full border-2 border-white object-contain"
+                  width={40}  
+                  height={40} 
+                  className="rounded-full border-2 border-white object-contain"
                 />
               </a>
             ))}
@@ -109,4 +114,3 @@ export default function Footer () {
     </footer>
   );
 }
-

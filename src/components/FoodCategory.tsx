@@ -1,16 +1,16 @@
 import React from 'react';
 import { Great_Vibes } from 'next/font/google';
+import Image from 'next/image'; 
 
 const VibeFont = Great_Vibes({ subsets: ['latin'], weight: ['400'] });
-export default function FoodCategory () {
+
+export default function FoodCategory() {
   return (
     <section className="bg-black text-white py-12  justify-center sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         {/* Heading */}
         <div className="text-center mb-8 sm:mb-12">
-          <p
-            className={`${VibeFont.className} text-3xl sm:text-4xl text-[#FF9F0D] mb-4`}
-          >
+          <p className={`${VibeFont.className} text-3xl sm:text-4xl text-[#FF9F0D] mb-4`}>
             Food Category
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
@@ -22,9 +22,11 @@ export default function FoodCategory () {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Food Item 1 */}
           <div className="relative bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 group">
-            <img
+            <Image
               src="/image8.png"
               alt="Fast Food Dish"
+              width={500} 
+              height={300} 
               className="w-full h-48 sm:h-56 object-cover"
             />
             <div className="absolute top-4 left-4 text-orange-500 bg-white py-1 px-3 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -35,12 +37,13 @@ export default function FoodCategory () {
             </div>
           </div>
 
-          {/* Repeat Food Item Template */}
           {/* Food Item 2 */}
           <div className="relative bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 group">
-            <img
+            <Image
               src="/image7.png"
               alt="Fast Food Dish"
+              width={500}
+              height={300}
               className="w-full h-48 sm:h-56 object-cover"
             />
             <div className="absolute top-4 left-4 text-orange-500 bg-white py-1 px-3 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -53,9 +56,11 @@ export default function FoodCategory () {
 
           {/* Food Item 3 */}
           <div className="relative bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 group">
-            <img
+            <Image
               src="/image68.png"
               alt="Fast Food Dish"
+              width={500}
+              height={300}
               className="w-full h-48 sm:h-56 object-cover"
             />
             <div className="absolute top-4 left-4 text-orange-500 bg-white py-1 px-3 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -68,9 +73,11 @@ export default function FoodCategory () {
 
           {/* Food Item 4 */}
           <div className="relative bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 group">
-            <img
+            <Image
               src="/image9.png"
               alt="Fast Food Dish"
+              width={500}
+              height={300}
               className="w-full h-48 sm:h-56 object-cover"
             />
             <div className="absolute top-4 left-4 text-orange-500 bg-white py-1 px-3 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -85,5 +92,3 @@ export default function FoodCategory () {
     </section>
   );
 }
-
-

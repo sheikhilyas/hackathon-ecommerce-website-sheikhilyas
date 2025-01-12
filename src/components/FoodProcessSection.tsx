@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import { Great_Vibes } from 'next/font/google';
-
 
 const VibeFont = Great_Vibes({ subsets: ['latin'], weight: ['400'] });
 
@@ -9,10 +7,10 @@ export default function FoodProcessSection() {
     <section className="relative h-[400px] w-full bg-cover bg-center" style={{ backgroundImage: "url('/image19.png')" }}>
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       <div className="relative z-10 flex flex-col items-end justify-center h-full px-4 lg:pr-20 text-white">
-        <p className={`${VibeFont.className}   text-3xl sm:text-4xl text-[#FF9F0D] mb-2`}>
-        Restaurant Active Process
-                                </p>
-        <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl mb-4 text-right ">
+        <p className={`${VibeFont.className} text-3xl sm:text-4xl text-[#FF9F0D] mb-2`}>
+          Restaurant Active Process
+        </p>
+        <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl mb-4 text-right">
           <span className="text-[#FF9F0D]">We</span> Document Every <br />Food Bean Process until it is saved
         </h1>
         <p className="text-gray-300 text-sm md:text-base max-w-2xl mb-6 text-right">

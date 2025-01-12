@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import profilePic from '/public/profile.jpg';
 
 export default function Testimonial() {
   return (
@@ -12,7 +11,6 @@ export default function Testimonial() {
         <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
           <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white">
             <Image src="/image27.png" alt="Profile" width={80} height={80} />
-
           </div>
         </div>
         <p className="text-yellow-500 text-5xl text-center mt-6 mb-6">&#x201C;</p>

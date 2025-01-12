@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'; 
 
 export default function Drink() {
   return (
@@ -48,10 +49,12 @@ export default function Drink() {
 
       {/* Image on the right */}
       <div className="flex-none w-1/3 p-4 flex justify-center items-center">
-        <img
+        <Image
           src="/image41.png"
           alt="Menu Highlight"
-          className="w-[448px] h-[626px] object-cover rounded-lg shadow-lg"
+          width={448} 
+          height={626} 
+          className="object-cover rounded-lg shadow-lg"
         />
       </div>
     </div>

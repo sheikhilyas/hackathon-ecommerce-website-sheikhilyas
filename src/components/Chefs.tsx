@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"; 
 
 const chefs = [
   { name: "Tahmina Ruml", role: "Chef", image: "/image72.png" },
@@ -24,10 +25,12 @@ export default function ChefGrid() {
             key={index}
             className="text-center bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-xl transition border-2 border-gray-700"
           >
-            <img
+            <Image
               src={chef.image}
               alt={chef.name}
-              className="w-[312px] h-[379.17px] object-cover rounded"
+              width={312} 
+              height={379} 
+              className="object-cover rounded"
             />
             <h3 className="mt-4 text-lg font-bold">{chef.name}</h3>
             <p className="text-sm text-gray-400">{chef.role}</p>

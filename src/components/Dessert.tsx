@@ -1,11 +1,18 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Dessert() {
   return (
     <div className="bg-white text-black font-sans min-h-screen flex">
       {/* Image on the left */}
       <div className="flex-none w-1/3 p-4 flex justify-center items-center">
-        <img src="/image26.png" alt="Menu Highlight" className="w-[448px] h-[626px] object-cover rounded-lg shadow-lg" />
+        <Image 
+          src="/image26.png"
+          alt="Menu Highlight"
+          width={448}
+          height={626} 
+          className="object-cover rounded-lg shadow-lg"
+        />
       </div>
 
       {/* Content on the right */}

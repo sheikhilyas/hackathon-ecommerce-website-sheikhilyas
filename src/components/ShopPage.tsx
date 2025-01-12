@@ -1,4 +1,4 @@
-import React from 'react';
+import Image from 'next/image';
 
 export default function ShopPage() {
   return (
@@ -31,7 +31,7 @@ export default function ShopPage() {
 
             {/* Products Grid */}
             <div className="grid grid-cols-3 gap-6">
-              {[
+              {[ 
                 { name: 'Fresh Lime', price: 38, originalPrice: 45, img: '/image58.png' },
                 { name: 'Chocolate Muffin', price: 28, img: '/image59.png' },
                 { name: 'Burger', price: 21, originalPrice: 45, img: '/image60.png' },
@@ -50,10 +50,12 @@ export default function ShopPage() {
               ].map((item, index) => (
                 <div key={index} className="bg-white-800 p-4 rounded-lg">
                   {/* Product Image */}
-                  <img
+                  <Image
                     src={item.img}
                     alt={item.name}
-                    className="w-[312px] h-[267px] object-cover mb-4 rounded-lg"
+                    width={312}
+                    height={267}
+                    className="object-cover mb-4 rounded-lg"
                   />
                   {/* Product Details */}
                   <h3 className="text-lg font-semibold">{item.name}</h3>
@@ -103,9 +105,11 @@ export default function ShopPage() {
 
             {/* Banner Section */}
             <div className="mt-8 bg-yellow-500 p-4 rounded-lg text-center">
-              <img
+              <Image
                 src="/perfect-taste-banner.png"
                 alt="Perfect Taste"
+                width={600}
+                height={300}
                 className="w-full h-auto mb-4 rounded-lg"
               />
               <h2 className="text-xl font-bold mb-2 text-black">Perfect Taste</h2>
@@ -130,10 +134,12 @@ export default function ShopPage() {
               <ul className="space-y-4 text-black-300">
                 {['Pizza', 'Cupcake', 'Cookies', 'Burger'].map((product, index) => (
                   <li key={product} className="flex items-center space-x-2">
-                    <img
+                    <Image
                       src={`/image86${index + 1}.png`}
                       alt={product}
-                      className="w-12 h-12 object-cover rounded-lg"
+                      width={48}
+                      height={48}
+                      className="object-cover rounded-lg"
                     />
                     <div>
                       <p>{product}</p>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Great_Vibes } from 'next/font/google';
+import Image from 'next/image'; 
+
 const VibeFont = Great_Vibes({ subsets: ['latin'], weight: ['400'] });
 
 export default function About () {
@@ -9,8 +11,7 @@ export default function About () {
                 <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center">
                     {/* Left Content */}
                     <div className="md:w-1/2 space-y-6">
-                        <p className={`${VibeFont.className} text-3xl sm:text-4xl text-[#FF9F0D] mb-4`}
-                        >
+                        <p className={`${VibeFont.className} text-3xl sm:text-4xl text-[#FF9F0D] mb-4`}>
                             About us
                         </p>
                         <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
@@ -51,29 +52,32 @@ export default function About () {
                     >
                         {/* Image 1 */}
                         <div className="col-span-2 flex">
-                            <img
+                            <Image
                                 src="/image69.png"
                                 alt="Main Dish"
                                 className="rounded-lg shadow-lg object-cover w-full h-full transition-transform duration-500 hover:scale-110"
-                                style={{ height: 'auto', maxHeight: '210px' }}
+                                width={500} 
+                                height={210} 
                             />
                         </div>
                         {/* Image 2 */}
                         <div className="flex">
-                            <img
+                            <Image
                                 src="/image5.png"
                                 alt="Side Dish"
                                 className="rounded-lg shadow-lg object-cover w-full transition-transform duration-500 hover:scale-110"
-                                style={{ height: '160px' }}
+                                width={500} 
+                                height={160} 
                             />
                         </div>
                         {/* Image 3 */}
                         <div className="flex">
-                            <img
+                            <Image
                                 src="/image4.png"
                                 alt="Sandwich"
                                 className="rounded-lg shadow-lg object-cover w-full transition-transform duration-500 hover:scale-110"
-                                style={{ height: '160px' }}
+                                width={500} 
+                                height={160} 
                             />
                         </div>
                     </div>
@@ -82,5 +86,3 @@ export default function About () {
         </div>
     );
 }
-
-

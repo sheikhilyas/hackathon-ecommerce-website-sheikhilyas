@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function SignIn() {
   return (
@@ -93,10 +94,12 @@ export default function SignIn() {
           type="button"
           className="flex items-center justify-center w-full px-4 py-2 mb-3 text-gray-700 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200"
         >
-          <img
-            src="Google.png"
+          <Image
+            src="/Google.png" // Path to image
             alt="Google logo"
-            className="w-5 h-5 mr-2"
+            width={20}
+            height={20}
+            className="mr-2"
           />
           Sign in with Google
         </button>
@@ -104,10 +107,12 @@ export default function SignIn() {
           type="button"
           className="flex items-center justify-center w-full px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200"
         >
-          <img
+          <Image
             src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
             alt="Apple logo"
-            className="w-5 h-5 mr-2"
+            width={20}
+            height={20}
+            className="mr-2"
           />
           Sign in with Apple
         </button>

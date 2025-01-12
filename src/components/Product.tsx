@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Product() {
   const products = [
@@ -25,10 +26,12 @@ export default function Product() {
           {products.map((product, index) => (
             <tr key={index} className="border-b border-gray-700">
               <td className="py-4 flex items-center">
-                <img
+                <Image
                   src={product.image}
                   alt={product.name}
-                  className="w-16 h-16 rounded-md mr-4"
+                  width={64} 
+                  height={64} 
+                  className="rounded-md mr-4"
                 />
                 <div>
                   <p className="font-semibold">{product.name}</p>
@@ -81,5 +84,3 @@ export default function Product() {
     </div>
   );
 }
-
-
