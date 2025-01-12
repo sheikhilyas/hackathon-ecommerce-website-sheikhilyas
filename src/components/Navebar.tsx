@@ -42,7 +42,7 @@ export default function Navebar() {
                                     It&apos;s Quick &amp; Amusing!
                                 </p>
                                 <h1 className="font-bold text-4xl sm:text-5xl lg:text-7xl text-white mb-6 leading-tight">
-                                    <span className="text-[#FF9F0D]">Th&apos;e</span> Art of Speed
+                                    <span className="text-[#FF9F0D]">Th</span>e Art of Speed
                                     <br /> Food Quality
                                 </h1>
                                 <p className="text-gray-300 text-lg mb-8 max-w-md">

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/image'; 
 
 export default function ShopPage() {
   return (
@@ -31,16 +31,10 @@ export default function ShopPage() {
 
             {/* Products Grid */}
             <div className="grid grid-cols-3 gap-6">
-              {[ 
+              {[
                 { name: 'Fresh Lime', price: 38, originalPrice: 45, img: '/image58.png' },
                 { name: 'Chocolate Muffin', price: 28, img: '/image59.png' },
                 { name: 'Burger', price: 21, originalPrice: 45, img: '/image60.png' },
-                { name: 'Country Burger', price: 45, img: '/image61.png' },
-                { name: 'Drink', price: 23, originalPrice: 45, img: '/image62.png' },
-                { name: 'Pizza', price: 43, img: '/image63.png' },
-                { name: 'Cheese Butter', price: 10, img: '/image66.png' },
-                { name: 'Sandwiches', price: 25, img: '/image64.png' },
-                { name: 'Chicken Chup', price: 12, img: '/image65.png' },
                 { name: 'Country Burger', price: 45, img: '/image61.png' },
                 { name: 'Drink', price: 23, originalPrice: 45, img: '/image62.png' },
                 { name: 'Pizza', price: 43, img: '/image63.png' },
@@ -135,7 +129,7 @@ export default function ShopPage() {
                 {['Pizza', 'Cupcake', 'Cookies', 'Burger'].map((product, index) => (
                   <li key={product} className="flex items-center space-x-2">
                     <Image
-                      src={`/image86${index + 1}.png`}
+                      src={`/image52${index + 1}.png`}
                       alt={product}
                       width={48}
                       height={48}
