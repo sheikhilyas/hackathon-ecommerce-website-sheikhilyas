@@ -1,11 +1,13 @@
 import ChefGrid from "@/components/Chefs";
 import Outchef from "@/components/outchef";
 
-export default function () {
-    return (
-        <div>
-            <Outchef />
-            <ChefGrid />
-        </div>
-    );
-}
+const OurChef: React.FC = () => {
+  return (
+    <div>
+      <Outchef />
+      <ChefGrid />
+    </div>
+  );
+};
+
+export default OurChef;

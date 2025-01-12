@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function Checkout() {
+const Checkout: React.FC = () => {
   return (
     <main className='w-full bg-[url("/image24.png")] bg-cover bg-no-repeat bg-center py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28'>
       <div className='container mx-auto px-4'>
@@ -22,4 +22,6 @@ export default function Checkout() {
       </div>
     </main>
   );
-}
+};
+
+export default Checkout;

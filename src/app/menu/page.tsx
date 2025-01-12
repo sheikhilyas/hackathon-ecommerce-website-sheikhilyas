@@ -6,18 +6,20 @@ import PartnersClients from "@/components/PartnersClients";
 import StartMenu from "@/components/startmenu";
 import StartSection from "@/components/startsection";
 
-export default function (){
-  return(
-<div>
-<Ourmenu/>
-<StartMenu/>
-<Menucouse/>
-<StartSection/>
-<Dessert/>
-<Drink/>
-<PartnersClients/>
-   
-  
-</div>
+const Menu: React.FC = () => {
+  return (
+    <div>
+      <Ourmenu />
+      <StartMenu />
+      <Menucouse />
+      <StartSection />
+      <Dessert />
+      <Drink />
+      <PartnersClients />
+    </div>
   );
-}
+};
+
+export default Menu;
+
+

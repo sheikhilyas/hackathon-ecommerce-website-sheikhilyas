@@ -39,7 +39,7 @@ export default function Navebar() {
                             {/* Text Content */}
                             <div className="lg:mt-40 max-w-xl">
                                 <p className={`${VibeFont.className} text-3xl sm:text-4xl text-[#FF9F0D] mb-4`}>
-                                    It's Quick & Amusing!
+                                    It&apos;s Quick &amp; Amusing!
                                 </p>
                                 <h1 className="font-bold text-4xl sm:text-5xl lg:text-7xl text-white mb-6 leading-tight">
                                     <span className="text-[#FF9F0D]">Th&apos;e</span> Art of Speed
