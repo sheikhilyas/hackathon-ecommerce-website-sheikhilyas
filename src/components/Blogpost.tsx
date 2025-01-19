@@ -1,17 +1,17 @@
-import React from 'react';
+import React from 'react';  
 import { Great_Vibes } from "next/font/google";
 import Image from 'next/image';
 import Link from 'next/link';
 
 const VibeFont = Great_Vibes({ subsets: ["latin"], weight: ["400"] });
 
-export default function BlogPost () {
-  const blogPosts = [
-    { id: 1, image: "/image16.png", date: "10 February 2022" },
-    { id: 2, image: "/image17.png", date: "10 February 2022" },
-    { id: 3, image: "/image18.png", date: "10 February 2022" },
-  ];
+const blogPosts = [
+  { id: 1, image: "/image16.png", date: "10 February 2022" },
+  { id: 2, image: "/image17.png", date: "10 February 2022" },
+  { id: 3, image: "/image18.png", date: "10 February 2022" },
+];
 
+const BlogPost = () => {
   return (
     <div className="min-h-screen bg-black px-4 py-16 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -25,8 +25,8 @@ export default function BlogPost () {
           </h4>
         </div>
 
-        {/* Blog Posts Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Blog Posts Grid with top margin */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
           {blogPosts.map((post) => (
             <div 
               key={post.id}
@@ -40,11 +40,9 @@ export default function BlogPost () {
                   className="object-cover"
                 />
               </div>
-              
+
               <div className="p-6 space-y-4">
-                <p className="text-[#FF9F0D] text-sm font-medium">
-                  {post.date}
-                </p>
+                <p className="text-[#FF9F0D] text-sm font-medium">{post.date}</p>
                 <p className="text-white text-lg font-semibold line-clamp-2">
                   Pellentesque Non Efficitur Mi Aliquam Convallis Mi Quis
                 </p>
@@ -61,5 +59,6 @@ export default function BlogPost () {
       </div>
     </div>
   );
-}
+};
 
+export default BlogPost;

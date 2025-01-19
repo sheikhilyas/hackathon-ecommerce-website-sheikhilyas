@@ -2,26 +2,23 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-export default function Header () {
-  const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
+export default function Header() {
+  const [openDropdown, setOpenDropdown] = useState(null); 
 
-  const toggleShopDropdown = () => {
-    setIsShopDropdownOpen(!isShopDropdownOpen);
+  const toggleDropdown = (dropdownName) => {
+    setOpenDropdown((prev) => (prev === dropdownName ? null : dropdownName));
   };
 
   return (
     <section className="bg-black text-white relative">
-      {/* Navbar */}
       <nav className="bg-black border-gray-700">
         <div className="max-w-screen-xl mx-auto p-4 flex flex-col items-center relative top-3">
-          {/* Logo Centered */}
           <span className="text-2xl font-bold absolute top-0">
             <span className="text-yellow-500">Food</span>
             <span className="text-white">tuck</span>
           </span>
 
           <div className="w-full flex items-center justify-between mt-10">
-            {/* Navbar Links on Left */}
             <div className="hidden md:flex space-x-8 text-lg font-medium">
               <ul className="flex flex-row space-x-8">
                 <li>
@@ -37,21 +34,107 @@ export default function Header () {
                     Menu
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/blog"
-                    className="text-gray-400 hover:text-yellow-500"
-                  >
+
+                {/* Dropdown for Blog */}
+                <li
+                  className="relative"
+                  onMouseEnter={() => toggleDropdown("blog")}
+                  onMouseLeave={() => toggleDropdown(null)}
+                >
+                  <button className="text-gray-400 hover:text-yellow-500 flex items-center">
                     Blog
-                  </Link>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4 ml-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                  {openDropdown === "blog" && (
+                    <div className="absolute left-0 mt-2 bg-black text-white rounded-md shadow-lg w-40 z-10">
+                      <ul className="py-2">
+                        <li>
+                          <Link
+                            href="/blog"
+                            className="block px-4 py-2 text-white-700 hover:bg-gray-200 hover:text-black rounded-md"
+                          >
+                            Blog
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/blogdetails"
+                            className="block px-4 py-2 text-white-700 hover:bg-gray-200 hover:text-black rounded-md"
+                          >
+                            Blog Details
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </li>
-                <li>
-                  <Link
-                    href="/pages"
-                    className="text-gray-400 hover:text-yellow-500"
-                  >
+
+                {/* Dropdown for Pages */}
+                <li
+                  className="relative"
+                  onMouseEnter={() => toggleDropdown("pages")}
+                  onMouseLeave={() => toggleDropdown(null)}
+                >
+                  <button className="text-gray-400 hover:text-yellow-500 flex items-center">
                     Pages
-                  </Link>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4 ml-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                  {openDropdown === "pages" && (
+                    <div className="absolute left-0 mt-2 bg-black text-white rounded-md shadow-lg w-40 z-10">
+                      <ul className="py-2">
+                        <li>
+                          <Link
+                            href="/pages"
+                            className="block px-4 py-2 text-white-700 hover:bg-gray-200 hover:text-black rounded-md"
+                          >
+                            Page
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/checkout"
+                            className="block px-4 py-2 text-white-700 hover:bg-gray-200 hover:text-black rounded-md"
+                          >
+                            Checkout Page
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/FAQ"
+                            className="block px-4 py-2 text-white-700 hover:bg-gray-200 hover:text-black rounded-md"
+                          >
+                            FAQ Page
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </li>
                 <li>
                   <Link
@@ -61,11 +144,12 @@ export default function Header () {
                     About
                   </Link>
                 </li>
+
                 {/* Dropdown for Shop */}
                 <li
                   className="relative"
-                  onMouseEnter={toggleShopDropdown}
-                  onMouseLeave={toggleShopDropdown}
+                  onMouseEnter={() => toggleDropdown("shop")}
+                  onMouseLeave={() => toggleDropdown(null)}
                 >
                   <button className="text-gray-400 hover:text-yellow-500 flex items-center">
                     Shop
@@ -84,21 +168,21 @@ export default function Header () {
                       />
                     </svg>
                   </button>
-                  {isShopDropdownOpen && (
-                    <div className="absolute left-0 mt-2 bg-white text-black rounded-md shadow-lg w-40 z-10">
+                  {openDropdown === "shop" && (
+                    <div className="absolute left-0 mt-2 bg-black text-white rounded-md shadow-lg w-40 z-10">
                       <ul className="py-2">
                         <li>
                           <Link
                             href="/shoplist"
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-black rounded-md"
+                            className="block px-4 py-2 text-white-700 hover:bg-gray-200 hover:text-black rounded-md"
                           >
-                            Shop List
+                            Shop
                           </Link>
                         </li>
                         <li>
                           <Link
                             href="/shopdetails"
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-black rounded-md"
+                            className="block px-4 py-2 text-white-700 hover:bg-gray-200 hover:text-black rounded-md"
                           >
                             Shop Details
                           </Link>
@@ -106,7 +190,7 @@ export default function Header () {
                         <li>
                           <Link
                             href="/shopcart"
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-black rounded-md"
+                            className="block px-4 py-2 text-white-700 hover:bg-gray-200 hover:text-black rounded-md"
                           >
                             Shop Cart
                           </Link>
@@ -115,6 +199,7 @@ export default function Header () {
                     </div>
                   )}
                 </li>
+
                 <li>
                   <Link
                     href="/contact"
@@ -126,7 +211,6 @@ export default function Header () {
               </ul>
             </div>
 
-            {/* Search Bar and Cart Icon on Right */}
             <div className="flex items-center space-x-4">
               <div className="relative">
                 <input
@@ -174,5 +258,3 @@ export default function Header () {
     </section>
   );
 }
-
-

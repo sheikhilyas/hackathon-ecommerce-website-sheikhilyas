@@ -1,59 +1,129 @@
+'use client'; 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { Great_Vibes } from 'next/font/google';
+import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Testimonial() {
+const VibeFont = Great_Vibes({ subsets: ['latin'], weight: ['400'] });
+
+const Testimonial = [
+  {
+    id: 1,
+    name: 'Alamin Hasan',
+    role: 'Food Specialist',
+    image: '/profile1.png',
+    quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum.',
+    rating: 4,
+  },
+  {
+    id: 2,
+    name: 'Sarah Lee',
+    role: 'Marketing Expert',
+    image: '/profile2.png',
+    quote: 'Donec ut lorem eget arcu fringilla ultrices sit amet et ante. Sed malesuada mollis enim, a ullamcorper sem posuere eu.',
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: 'John Doe',
+    role: 'Web Developer',
+    image: '/profile3.png',
+    quote: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+    rating: 3,
+  },
+];
+
+export default function TestimonialsSection() {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  // Auto-advance testimonials
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % Testimonial.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="bg-black text-white py-16">
-      <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold text-yellow-400">Testimonials</h2>
-        <p className="text-3xl mt-4">What our client are saying</p>
-      </div>
-      <div className="max-w-4xl mx-auto bg-white text-black p-8 rounded-lg shadow-lg relative">
-        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
-          <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white">
-            <Image src="/image27.png" alt="Profile" width={80} height={80} />
-          </div>
+    <section className="bg-gradient-to-br bg-black text-white py-16 md:py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="mb-16">
+          <h2
+            className={`${VibeFont.className} text-amber-500 text-2xl sm:text-3xl md:text-4xl mb-4 text-left`}
+          >
+            Testimonials
+          </h2>
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-left">
+            What our clients are saying
+          </h3>
         </div>
-        <p className="text-yellow-500 text-5xl text-center mt-6 mb-6">&#x201C;</p>
-        <p className="text-center text-gray-600 leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.
-        </p>
-        <div className="text-center mt-6">
-          <div className="flex justify-center mb-2">
-            {[...Array(4)].map((_, index) => (
-              <svg
-                key={index}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                className="h-5 w-5 text-yellow-500"
-              >
-                <path d="M12 .587l3.668 7.568L24 9.75l-6 5.848L19.335 24 12 20.4 4.665 24 6 15.598 0 9.75l8.332-1.595z" />
-              </svg>
-            ))}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="h-5 w-5 text-gray-400"
-            >
-              <path
-                fill="currentColor"
-                d="M12 .587l3.668 7.568L24 9.75l-6 5.848L19.335 24 12 20.4 4.665 24 6 15.598 0 9.75l8.332-1.595z"
+
+        <div className="bg-white/95 backdrop-blur-sm text-black p-8 md:p-12 rounded-2xl shadow-2xl relative">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24">
+              <Image
+                src={Testimonial[currentTestimonial].image}
+                alt={Testimonial[currentTestimonial].name}
+                fill
+                className="rounded-full border-4 border-white shadow-lg object-cover"
               />
-            </svg>
+            </div>
           </div>
-          <h4 className="text-lg font-bold">Alamin Hasan</h4>
-          <p className="text-sm text-gray-500">Food Specialist</p>
+
+          <div className="text-4xl sm:text-6xl md:text-7xl text-amber-500 opacity-30 absolute top-8 left-8">
+            &quot;
+          </div>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentTestimonial}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="pt-8"
+            >
+              <p className="text-gray-600 text-base sm:text-lg md:text-xl text-center mb-8">
+                {Testimonial[currentTestimonial].quote}
+              </p>
+
+              <div className="flex justify-center mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <motion.svg
+                    key={i}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                    className={`w-5 h-5 sm:w-6 sm:h-6 mx-1 ${
+                      i < Testimonial[currentTestimonial].rating
+                        ? 'text-amber-500'
+                        : 'text-gray-300'
+                    }`}
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </motion.svg>
+                ))}
+              </div>
+
+              <div className="text-center">
+                <h4 className="font-bold text-lg sm:text-xl md:text-2xl mb-2">
+                  {Testimonial[currentTestimonial].name}
+                </h4>
+                <p className="text-gray-500 text-sm sm:text-base">
+                  {Testimonial[currentTestimonial].role}
+                </p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {[...Array(3)].map((_, index) => (
-            <div
-              key={index}
-              className={`h-2 w-2 rounded-full ${index === 0 ? 'bg-yellow-500' : 'bg-gray-300'}`}
-            ></div>
-          ))}
-        </div>
+
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-amber-500 opacity-10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl" />
+        <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-amber-500 opacity-10 rounded-full translate-x-1/3 translate-y-1/3 blur-2xl" />
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import { Great_Vibes } from 'next/font/google';
 import Image from 'next/image'; 
 
@@ -6,7 +6,7 @@ const VibeFont = Great_Vibes({ subsets: ['latin'], weight: ['400'] });
 
 export default function FoodCategory() {
   return (
-    <section className="bg-black text-white py-12  justify-center sm:py-16">
+    <section className="bg-black text-white py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         {/* Heading */}
         <div className="text-center mb-8 sm:mb-12">

@@ -30,22 +30,22 @@ export default function StartMenu() {
   ];
 
   return (
-    <div className="bg-white text-black py-10"> 
-      <div className="container mx-auto flex flex-col md:flex-row items-start">
+    <div className="bg-white text-black py-10 flex justify-center items-center min-h-screen">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start max-w-5xl w-full space-y-10 lg:space-y-0 lg:space-x-10">
         {/* Left Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full lg:w-1/2 flex justify-center">
           <Image
             src="/image14.png"
             alt="Delicious starter menu items including Alder Grilled Chinook Salmon and more"
-            width={448} 
-            height={500} 
-            className="w-full max-w-md h-auto rounded-lg shadow-lg"
+            width={448}
+            height={626}
+            className="w-[448px] h-[626px] rounded-lg shadow-lg"
           />
         </div>
 
         {/* Right Menu Section */}
-        <div className="w-full md:w-1/2 md:pl-10">
-          <h2 className="text-4xl font-bold mb-6">Starter Menu</h2>
+        <div className="w-full lg:w-1/2">
+          <h2 className="text-4xl font-bold mb-8 text-center">Starter Menu</h2>
           <ul className="space-y-6">
             {menuItems.map((item, index) => (
               <li
@@ -55,7 +55,7 @@ export default function StartMenu() {
                 <div>
                   <h3
                     className={`text-xl font-semibold ${
-                      item.highlight ? "text-black-500" : "text-black"
+                      item.highlight ? "text-yellow-400" : "text-black"
                     }`}
                   >
                     {item.title}
@@ -74,5 +74,3 @@ export default function StartMenu() {
     </div>
   );
 }
-
-

@@ -1,11 +1,11 @@
-import { LuPizza } from "react-icons/lu";
+import { LuPizza } from "react-icons/lu"; 
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { GiHamburger } from "react-icons/gi";
 import { PiChefHatDuotone } from "react-icons/pi";
 
 export default function StartSection() {
   return (
-    <div className=" bg-black relative py-10">
+    <div className="bg-black relative py-10">
       <div className="container mx-auto text-center text-white">
         {/* Main Background Image */}
         <div
@@ -19,7 +19,7 @@ export default function StartSection() {
           }}
         ></div>
 
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Start Card 1 */}
           <div className="flex flex-col items-center space-y-4">
             <PiChefHatDuotone className="text-orange-500 text-6xl" />
@@ -52,5 +52,3 @@ export default function StartSection() {
     </div>
   );
 }
-
-

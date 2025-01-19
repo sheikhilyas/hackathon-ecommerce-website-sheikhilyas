@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'; 
 import Image from 'next/image';
 
 export default function Dessert() {
   return (
-    <div className="bg-white text-black font-sans min-h-screen flex">
+    <div className="bg-white text-black font-sans min-h-screen flex items-center justify-center">
       {/* Image on the left */}
       <div className="flex-none w-1/3 p-4 flex justify-center items-center">
         <Image 
@@ -11,7 +11,7 @@ export default function Dessert() {
           alt="Menu Highlight"
           width={448}
           height={626} 
-          className="object-cover rounded-lg shadow-lg"
+          className="object-cover rounded-lg"
         />
       </div>
 

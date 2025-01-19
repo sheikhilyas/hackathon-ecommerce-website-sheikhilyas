@@ -11,7 +11,7 @@ export default function Product() {
   ];
 
   return (
-    <div className="w-full h-screen bg-white text-black p-6 flex justify-center items-center">
+    <div className="w-full h-screen bg-white text-black p-6 flex justify-center items-center top-5">
       <div className="w-[1320px] h-[765px]">
         <table className="w-full border-collapse">
           <thead>

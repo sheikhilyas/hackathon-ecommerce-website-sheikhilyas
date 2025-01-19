@@ -1,5 +1,4 @@
 import Navebar from "@/components/Navebar";
-import BlogPage from "@/components/Blogpost";
 import Choosepick from "@/components/Choose&pick";
 import FoodCategory from "@/components/FoodCategory";
 import FoodProcessSection from "@/components/FoodProcessSection";
@@ -8,6 +7,7 @@ import StartSection from "@/components/startsection";
 import Testimonial from "@/components/TestimonialComponent";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import About from "@/components/wecreatethe";
+import BlogPost from "@/components/Blogpost";
 
 export default function HomePage() {
   return (
@@ -17,11 +17,11 @@ export default function HomePage() {
       <FoodCategory />
       <WhyChooseUs />
       <StartSection />
-      <BlogPage />
-      <FoodProcessSection />
+      <Choosepick />
       <MeetOurChef />
       <Testimonial />
-      <Choosepick />
+      <FoodProcessSection />
+      <BlogPost/>
     </div>
   );
 }

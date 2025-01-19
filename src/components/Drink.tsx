@@ -1,61 +1,64 @@
-import React from 'react';
+import React from 'react'; 
 import Image from 'next/image'; 
 
 export default function Drink() {
   return (
-    <div className="bg-white text-black font-sans min-h-screen flex">
-      {/* Content on the left */}
-      <div className="flex-1 max-w-4xl px-4 py-8">
-        <h1 className="text-4xl font-bold text-left mb-8 border-b border-gray-700 pb-2">Dessert</h1>
+    <div className="bg-white text-black font-sans min-h-screen flex items-center justify-center">
+      {/* Wrapper for content */}
+      <div className="flex bg-white rounded-lg overflow-hidden max-w-6xl w-full">
+        {/* Content on the left */}
+        <div className="flex-1 max-w-4xl px-4 py-8">
+          <h1 className="text-4xl font-bold text-left mb-8 border-b border-gray-700 pb-2">Dessert</h1>
 
-        <div className="space-y-8">
-          <div className="flex justify-between items-center border-b border-gray-700 pb-4">
-            <div>
-              <h2 className="text-2xl font-semibold">Fig and lemon cake</h2>
-              <p className="text-gray-400 mt-2">Toasted French bread topped with romano, cheddar</p>
-              <p className="text-gray-500 mt-2">560 CAL</p>
+          <div className="space-y-8">
+            <div className="flex justify-between items-center border-b border-gray-700 pb-4">
+              <div>
+                <h2 className="text-2xl font-semibold">Fig and lemon cake</h2>
+                <p className="text-gray-400 mt-2">Toasted French bread topped with romano, cheddar</p>
+                <p className="text-gray-500 mt-2">560 CAL</p>
+              </div>
+              <span className="text-orange-400 text-xl font-bold">32$</span>
             </div>
-            <span className="text-orange-400 text-xl font-bold">32$</span>
-          </div>
 
-          <div className="flex justify-between items-center border-b border-gray-700 pb-4">
-            <div>
-              <h2 className="text-2xl font-semibold">Creamy mascarpone cake</h2>
-              <p className="text-gray-400 mt-2">Gorgonzola, ricotta, mozzarella, taleggio</p>
-              <p className="text-gray-500 mt-2">700 CAL</p>
+            <div className="flex justify-between items-center border-b border-gray-700 pb-4">
+              <div>
+                <h2 className="text-2xl font-semibold">Creamy mascarpone cake</h2>
+                <p className="text-gray-400 mt-2">Gorgonzola, ricotta, mozzarella, taleggio</p>
+                <p className="text-gray-500 mt-2">700 CAL</p>
+              </div>
+              <span className="text-orange-400 text-xl font-bold">43$</span>
             </div>
-            <span className="text-orange-400 text-xl font-bold">43$</span>
-          </div>
 
-          <div className="flex justify-between items-center border-b border-gray-700 pb-4">
-            <div>
-              <h2 className="text-2xl font-semibold">Pastry, blueberries, lemon juice</h2>
-              <p className="text-gray-400 mt-2">Ground cumin, avocados, peeled and cubed</p>
-              <p className="text-gray-500 mt-2">1000 CAL</p>
+            <div className="flex justify-between items-center border-b border-gray-700 pb-4">
+              <div>
+                <h2 className="text-2xl font-semibold">Pastry, blueberries, lemon juice</h2>
+                <p className="text-gray-400 mt-2">Ground cumin, avocados, peeled and cubed</p>
+                <p className="text-gray-500 mt-2">1000 CAL</p>
+              </div>
+              <span className="text-orange-400 text-xl font-bold">14$</span>
             </div>
-            <span className="text-orange-400 text-xl font-bold">14$</span>
-          </div>
 
-          <div className="flex justify-between items-center">
-            <div>
-              <h2 className="text-2xl font-semibold">Pain au chocolat</h2>
-              <p className="text-gray-400 mt-2">Spreadable cream cheese, crumbled blue cheese</p>
-              <p className="text-gray-500 mt-2">560 CAL</p>
+            <div className="flex justify-between items-center">
+              <div>
+                <h2 className="text-2xl font-semibold">Pain au chocolat</h2>
+                <p className="text-gray-400 mt-2">Spreadable cream cheese, crumbled blue cheese</p>
+                <p className="text-gray-500 mt-2">560 CAL</p>
+              </div>
+              <span className="text-orange-400 text-xl font-bold">35$</span>
             </div>
-            <span className="text-orange-400 text-xl font-bold">35$</span>
           </div>
         </div>
-      </div>
 
-      {/* Image on the right */}
-      <div className="flex-none w-1/3 p-4 flex justify-center items-center">
-        <Image
-          src="/image41.png"
-          alt="Menu Highlight"
-          width={448} 
-          height={626} 
-          className="object-cover rounded-lg shadow-lg"
-        />
+        {/* Image on the right */}
+        <div className="flex-none w-1/3 p-4 flex justify-center items-center">
+          <Image
+            src="/image41.png"
+            alt="Menu Highlight"
+            width={448} 
+            height={626} 
+            className="object-cover rounded-lg"
+          />
+        </div>
       </div>
     </div>
   );

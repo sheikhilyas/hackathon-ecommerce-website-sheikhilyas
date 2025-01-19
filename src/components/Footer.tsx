@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react';  
 import Image from 'next/image';
 
-export default function Footer () {
+export default function Footer() {
   const recentPosts = [
     {
       title: 'Is fastfood good for your body?',
@@ -29,8 +29,12 @@ export default function Footer () {
   ];
 
   return (
-    <footer className="bg-black text-gray-400 relative">
-      <div className="container mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-6">
+    <footer className="bg-black text-gray-400">
+      {/* Line above the footer */}
+      <div className="w-9/12 h-0.5 bg-orange-500 mx-auto "></div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* About Us Section */}
         <div>
           <h2 className="text-white font-bold text-lg mb-4">About Us</h2>
@@ -78,8 +82,8 @@ export default function Footer () {
                 <Image
                   src={post.imgSrc}
                   alt={post.title}
-                  width={48}  
-                  height={48} 
+                  width={48}
+                  height={48}
                   className="object-cover rounded"
                 />
                 <div>
@@ -95,16 +99,16 @@ export default function Footer () {
       {/* Footer Bottom */}
       <div className="bg-gray-900 py-4">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm">&copy; 2024 by Sheikh Ilyas. All Rights Reserved.</p>
+          <p className="text-sm text-center md:text-left">&copy; 2024 by Sheikh Ilyas. All Rights Reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             {socialIcons.map((icon) => (
               <a href={icon.href} key={icon.name} className="hover:text-white">
                 <Image
                   src={icon.src}
                   alt={icon.name}
-                  width={40}  
-                  height={40} 
-                  className="rounded-full border-2 border-white object-contain"
+                  width={32}
+                  height={32}
+                  className="rounded-full object-contain"
                 />
               </a>
             ))}

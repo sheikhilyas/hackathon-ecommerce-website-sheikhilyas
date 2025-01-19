@@ -1,12 +1,13 @@
-import Blogdetails from "@/components/Blogdetails";
-import Blogsidebar from "@/components/Blogsidebar";
+import BlogCard from '@/components/Blogcard'
+import Sidebar from '@/components/blogssidebar'
+import React from 'react'
 
-export default function Bolg() {
-    return (
-      <div>
-      <Blogdetails/>
-      <Blogsidebar/>
-      </div>
-    );
-  }
-  
+
+export default function blog() {
+  return (
+    <div>
+      <BlogCard/>
+      <Sidebar />
+    </div>
+  )
+} 
