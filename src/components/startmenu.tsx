@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/image'; 
 
 export default function StartMenu() {
   const menuItems = [
@@ -39,13 +39,13 @@ export default function StartMenu() {
             alt="Delicious starter menu items including Alder Grilled Chinook Salmon and more"
             width={448}
             height={626}
-            className="w-[448px] h-[626px] rounded-lg shadow-lg"
+            className="w-[444px] h-[550px] shadow-lg"
           />
         </div>
 
         {/* Right Menu Section */}
         <div className="w-full lg:w-1/2">
-          <h2 className="text-4xl font-bold mb-8 text-center">Starter Menu</h2>
+          <h2 className="text-4xl font-bold mb-8">Starter Menu</h2>
           <ul className="space-y-6">
             {menuItems.map((item, index) => (
               <li
@@ -54,8 +54,8 @@ export default function StartMenu() {
               >
                 <div>
                   <h3
-                    className={`text-xl font-semibold ${
-                      item.highlight ? "text-yellow-400" : "text-black"
+                    className={`text-xl font-bold hover:text-yellow-500 transition duration-300 ${
+                      item.title === "Berries and creme tart" ? "text-black" : item.highlight ? "text-gray-400" : "text-black"
                     }`}
                   >
                     {item.title}
@@ -63,7 +63,7 @@ export default function StartMenu() {
                   <p className="text-gray-400">{item.description}</p>
                   <span className="text-gray-500">{item.calories}</span>
                 </div>
-                <div className="text-yellow-500 text-xl font-bold">
+                <div className="text-gray-500 text-xl font-bold">
                   {item.price}
                 </div>
               </li>
