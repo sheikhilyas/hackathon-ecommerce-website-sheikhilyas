@@ -9,7 +9,6 @@ export default function blog() {
       <Header2/>
       <Bloglist/>
       <BlogCard/>
-      {/* <Sidebar /> */}
     </div>
   )
 } 
