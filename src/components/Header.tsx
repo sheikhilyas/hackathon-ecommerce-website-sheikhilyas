@@ -12,10 +12,10 @@ export default function Header() {
   return (
     <section className="bg-black text-white relative">
       <nav className="bg-black border-gray-700">
-        <div className="max-w-screen-xl mx-auto p-4 flex flex-col items-center relative top-3">
+        <div className="max-w-screen-xl mx-auto p-4 flex flex-col items-center relative top-3 ">
           <span className="text-2xl font-bold absolute top-0">
-            <span className="text-yellow-500">Food</span>
-            <span className="text-white">tuck</span>
+            <span className="text-white">Food</span>
+            <span className="text-yellow-500">tuck</span>
           </span>
 
           <div className="w-full flex items-center justify-between mt-10">

@@ -2,18 +2,18 @@ import React from "react";
 
 const DigitalDetox = () => {
   return (
-    <div className="bg-white text-gray-900 w-[872px] mx-auto text-justify">
-      {/* Header Section */}
-      <div className="relative w-full h-[400px]">
-        <img
-          src="/image92.png"
-          alt="Dish"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
+    <div className="bg-white text-gray-900 w-full flex justify-start">
       {/* Content Section */}
-      <div className="px-6 py-8">
+      <div className="w-[80%] max-w-[600px] px-6 py-8">
+        {/* Header Section */}
+        <div className="relative w-full h-[400px]">
+          <img
+            src="/image92.png"
+            alt="Dish"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
         {/* Metadata */}
         <div className="text-sm text-gray-500 flex items-center space-x-4">
           <span className="flex items-center">
@@ -55,11 +55,11 @@ const DigitalDetox = () => {
         </p>
 
         {/* Secondary Image */}
-        <div className="mt-6 flex justify-center">
+        <div className="mt-6">
           <img
             src="/image93.png"
             alt="Dish"
-            className="w-[424px] h-[366px] object-cover rounded-lg shadow-md"
+            className="w-[424px] h-auto object-cover"
           />
         </div>
 
@@ -83,34 +83,31 @@ const DigitalDetox = () => {
             ))}
           </div>
         </div>
-      </div>
 
-      {/* Comments Section */}
-      <div className="px-6 py-8 bg-gray-50">
-        <h2 className="text-xl font-bold mb-6">Comments - 03</h2>
-        <div className="space-y-6">
-          {[1, 2, 3].map((_, index) => (
-            <div key={index} className="border-b border-gray-200 pb-4">
-              <div className="flex items-center space-x-4">
-                <img
-                  src="/imageprofil1.png"
-                  alt="Avatar"
-                  className="w-10 h-10 rounded-full"
-                />
-                <div>
-                  <p className="font-medium text-gray-800">MD Gulli Khan</p>
-                  <p className="text-sm text-gray-500">June 22, 2022</p>
+        {/* Comments Section (Now placed below the form) */}
+        <div className="w-[80%] max-w-[600px] px-6 py-8 bg-gray-50 mt-8">
+          <h2 className="text-xl font-bold mb-6">Comments - 03</h2>
+          <div className="space-y-6">
+            {[1, 2, 3].map((_, index) => (
+              <div key={index} className="border-b border-gray-200 pb-4">
+                <div className="flex items-center space-x-4">
+                  <img
+                    src="/imageprofil1.png"
+                    alt="Avatar"
+                    className="w-10 h-10 rounded-full"
+                  />
+                  <div>
+                    <p className="font-medium text-gray-800">MD Gulli Khan</p>
+                    <p className="text-sm text-gray-500">June 22, 2022</p>
+                  </div>
                 </div>
+                <p className="mt-4 text-gray-700">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                  sed metus, fermentum nec imperdiet sed, pulvinar et sem.
+                </p>
               </div>
-              <p className="mt-4 text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                sed metus, fermentum nec imperdiet sed, pulvinar et sem.
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Post a Comment Section */}
+            ))}
+             {/* Post a Comment Section */}
         <div className="mt-8">
           <h3 className="text-lg font-bold mb-4">Post a comment</h3>
           <form className="space-y-4">
@@ -128,7 +125,7 @@ const DigitalDetox = () => {
             </div>
             <textarea
               placeholder="Write a comment"
-              rows="4"
+              rows={4}
               className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
             ></textarea>
             <button
@@ -138,6 +135,8 @@ const DigitalDetox = () => {
               Post a comment
             </button>
           </form>
+        </div>
+          </div>
         </div>
       </div>
     </div>

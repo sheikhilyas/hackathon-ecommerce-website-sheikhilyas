@@ -8,10 +8,12 @@ import Testimonial from "@/components/TestimonialComponent";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import About from "@/components/wecreatethe";
 import BlogPost from "@/components/Blogpost";
+import Header from "@/components/Header";
 
 export default function HomePage() {
   return (
     <div>
+      <Header/>
       <Navebar />
       <About />
       <FoodCategory />
