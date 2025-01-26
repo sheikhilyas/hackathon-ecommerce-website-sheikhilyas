@@ -3,22 +3,93 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 export default function Header() {
-  const [openDropdown, setOpenDropdown] = useState(null); 
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleDropdown = (dropdownName) => {
     setOpenDropdown((prev) => (prev === dropdownName ? null : dropdownName));
   };
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen((prev) => !prev);
+  };
+
   return (
     <section className="bg-black text-white relative">
       <nav className="bg-black border-gray-700">
-        <div className="max-w-screen-xl mx-auto p-4 flex flex-col items-center relative top-3 ">
+        <div className="max-w-screen-xl mx-auto p-4 flex flex-col items-center relative top-3">
+          {/* Logo */}
           <span className="text-2xl font-bold absolute top-0">
             <span className="text-white">Food</span>
             <span className="text-yellow-500">tuck</span>
           </span>
 
           <div className="w-full flex items-center justify-between mt-10">
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-gray-400 hover:text-yellow-500"
+              onClick={toggleMobileMenu}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+
+            {/* Mobile Dropdown Menu */}
+            {mobileMenuOpen && (
+              <div className="absolute top-16 left-0 w-full bg-black text-white z-20 p-4 md:hidden">
+                <ul className="space-y-4">
+                  <li>
+                    <Link href="/" className="block text-gray-400 hover:text-yellow-500">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/menu" className="block text-gray-400 hover:text-yellow-500">
+                      Menu
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/blog" className="block text-gray-400 hover:text-yellow-500">
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/pages" className="block text-gray-400 hover:text-yellow-500">
+                      Pages
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about" className="block text-gray-400 hover:text-yellow-500">
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/shop" className="block text-gray-400 hover:text-yellow-500">
+                      Shop
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact" className="block text-gray-400 hover:text-yellow-500">
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            )}
+
+            {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8 text-lg font-medium">
               <ul className="flex flex-row space-x-8">
                 <li>
@@ -211,43 +282,26 @@ export default function Header() {
               </ul>
             </div>
 
-            <div className="flex items-center space-x-4">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="bg-black border border-gray-600 rounded-full px-4 py-2 text-gray-400 placeholder-gray-500 focus:outline-none focus:border-yellow-500"
-                />
-                <button className="absolute top-2 right-3 text-gray-400 hover:text-yellow-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M21 21l-4.35-4.35m0 0a7.5 7.5 0 111.8-1.8l4.35 4.35z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <button className="text-gray-400 hover:text-yellow-500">
+            {/* Search Bar */}
+            <div className="relative ml-4">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="bg-black border border-gray-600 rounded-full px-4 py-2 text-gray-400 placeholder-gray-500 focus:outline-none focus:border-yellow-500"
+              />
+              <button className="absolute top-2 right-3 text-gray-400 hover:text-yellow-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M3 3h18M9 9h6m-8.25 9a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm12.5 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"
+                    d="M21 21l-4.35-4.35m0 0a7.5 7.5 0 111.8-1.8l4.35 4.35z"
                   />
                 </svg>
               </button>

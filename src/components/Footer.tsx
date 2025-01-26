@@ -1,5 +1,8 @@
-import React from 'react';  
+import React from 'react'; 
 import Image from 'next/image';
+import { FaYoutube, FaTwitter, FaPinterest } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa6";
+import { AiFillInstagram } from "react-icons/ai";
 
 export default function Footer() {
   const recentPosts = [
@@ -21,11 +24,11 @@ export default function Footer() {
   ];
 
   const socialIcons = [
-    { name: 'Facebook', href: '#', src: '/facebook-icon.png.png' },
-    { name: 'Twitter', href: '#', src: '/twitter-icon.png.png' },
-    { name: 'Instagram', href: '#', src: '/instagram-icon.png.png' },
-    { name: 'YouTube', href: '#', src: '/youtube-icon.png.png' },
-    { name: 'Pinterest', href: '#', src: '/pinterest-icon.png.png' },
+    { name: 'Facebook', href: '#', component: <FaFacebook /> },
+    { name: 'Twitter', href: '#', component: <FaTwitter /> },
+    { name: 'Instagram', href: '#', component: <AiFillInstagram /> },
+    { name: 'YouTube', href: '#', component: <FaYoutube /> },
+    { name: 'Pinterest', href: '#', component: <FaPinterest /> },
   ];
 
   return (
@@ -97,19 +100,17 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="bg-gray-900 py-4">
+      <div className="bg-gray-700 py-4">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-center md:text-left">&copy; 2024 by Sheikh Ilyas. All Rights Reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            {socialIcons.map((icon) => (
-              <a href={icon.href} key={icon.name} className="hover:text-white">
-                <Image
-                  src={icon.src}
-                  alt={icon.name}
-                  width={32}
-                  height={32}
-                  className="rounded-full object-contain"
-                />
+            {socialIcons.map((icon, index) => (
+              <a
+                href={icon.href}
+                key={index}
+                className="w-10 h-10 flex justify-center items-center square-full bg-white text-black hover:bg-orange-500"
+              >
+                {icon.component}
               </a>
             ))}
           </div>

@@ -30,44 +30,36 @@ export default function SimilarProducts() {
   ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white-100">
+    <div className="flex items-center justify-center min-h-screen bg-white-100 px-4">
       <div
-        className="similar-products"
-        style={{
-          width: "1320px",
-          height: "401px",
-          background: "white",
-          borderRadius: "12px",
-          padding: "20px",
-        }}
+        className="w-full max-w-5xl bg-white rounded-lg p-6"
       >
-        <h2 className="title text-black text-xl font-semibold mb-4">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
           Similar Products
         </h2>
-        <div className="products-grid flex justify-between items-center gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, index) => (
             <div
               key={index}
-              className="product-card relative overflow-hidden bg-white rounded-md hover:scale-105 transition-transform"
-              style={{ width: "300px" }}
+              className="bg-white rounded-lg overflow-hidden hover:scale-105 transition-transform"
             >
               <Image
                 src={product.image}
                 alt={product.name}
                 width={300}
                 height={300}
-                className="product-image object-cover"
+                className="object-cover w-full h-64"
               />
-              <div className="product-details p-4">
-                <h3 className="product-name text-lg font-medium text-black mb-2">
+              <div className="p-4">
+                <h3 className="text-lg font-medium text-gray-800 mb-2">
                   {product.name}
                 </h3>
-                <p className="product-price text-base text-black">
-                  <span className="current-price text-orange-500 font-bold">
+                <p className="text-base text-gray-800">
+                  <span className="text-orange-500 font-bold">
                     {product.price}
                   </span>
                   {product.oldPrice && (
-                    <span className="old-price text-gray-400 line-through ml-2">
+                    <span className="text-gray-400 line-through ml-2">
                       {product.oldPrice}
                     </span>
                   )}
@@ -76,11 +68,11 @@ export default function SimilarProducts() {
             </div>
           ))}
         </div>
-        <div className="navigation flex justify-between mt-4">
-          <button className="nav-btn bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition">
+        <div className="flex justify-between mt-6">
+          <button className="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition">
             &#8592;
           </button>
-          <button className="nav-btn bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition">
+          <button className="bg-orange-500 text-white px-4 py-2 rounded-full hover:bg-orange-600 transition">
             &#8594;
           </button>
         </div>

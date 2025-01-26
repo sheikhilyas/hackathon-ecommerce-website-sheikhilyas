@@ -1,14 +1,13 @@
-"use client";
+"use client"; 
 import { useState } from "react";
 
 export default function DescriptionTab() {
   const [activeTab, setActiveTab] = useState("description");
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white-100">
+    <div className="flex items-center justify-center min-h-screen bg-white-100 px-4">
       <div
-        className="p-6 bg-white text-black rounded-md"
-        style={{ width: "1320px", height: "458px" }}
+        className="p-6 bg-white text-black rounded-md w-full max-w-screen-lg"
       >
         {/* Tabs Section */}
         <div className="flex border-b border-gray-700 mb-4">
@@ -36,7 +35,7 @@ export default function DescriptionTab() {
 
         {/* Tab Content */}
         {activeTab === "description" && (
-          <div className="text-gray-800 overflow-y-auto">
+          <div className="text-gray-800 overflow-y-auto max-h-[300px]">
             <p className="mb-4">
               Nam tristique porta ligula, vel viverra sem eleifend nec. Nulla sed
               purus augue, eu euismod tellus. Nam mattis eros nec mi sagittis
@@ -70,7 +69,7 @@ export default function DescriptionTab() {
         )}
 
         {activeTab === "reviews" && (
-          <div className="text-gray-800 overflow-y-auto">
+          <div className="text-gray-800 overflow-y-auto max-h-[300px]">
             <p>
               Reviews content will go here. This is a placeholder for the
               reviews section.

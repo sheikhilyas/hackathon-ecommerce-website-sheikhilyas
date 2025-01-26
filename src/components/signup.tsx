@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function SignUp() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-orange-100">
+    <div className="flex items-center justify-center min-h-screen bg-white">
       <div className="w-full max-w-sm p-8 bg-white rounded shadow-lg">
         <h2 className="mb-6 text-2xl font-bold text-gray-800">Sign Up</h2>
         <form>
@@ -113,7 +113,7 @@ export default function SignUp() {
           className="flex items-center justify-center w-full px-4 py-2 mb-3 text-gray-700 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200"
         >
           <Image
-            src="/Google.png" // Path to image
+            src="/Google.png" 
             alt="Google logo"
             width={20}
             height={20}

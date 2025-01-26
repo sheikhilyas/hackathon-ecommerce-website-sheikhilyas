@@ -18,22 +18,24 @@ export default function FAQ() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">Questions Looks Here</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-6">
+      <div className="max-w-4xl text-center">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          Questions Looks Here
+        </h1>
         <p className="text-gray-500 mb-8">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {faqs.map((faq, index: number) => (
+          {faqs.map((faq, index) => (
             <div
               key={index}
-              className="p-6 bg-white rounded shadow cursor-pointer"
+              className="p-6 bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 cursor-pointer"
               onClick={() => toggleFAQ(index)}
             >
               <div className="flex justify-between items-center">
                 <h3 className="text-lg font-semibold text-gray-800">{faq.question}</h3>
-                <span className="text-2xl text-gray-400">
+                <span className="text-2xl font-bold text-gray-400">
                   {activeIndex === index ? "−" : "+"}
                 </span>
               </div>

@@ -1,4 +1,4 @@
-'use client';
+'use client'; 
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Great_Vibes } from 'next/font/google';
@@ -33,20 +33,19 @@ export default function ChoosePick() {
 
   return (
     <div className="bg-black text-white py-10 px-5">
-      <h2 className={`${VibeFont.className} text-center text-orange-400 sm:text-4xl text-2xl mb-4`}>
+      <h2 className={`${VibeFont.className} text-center text-orange-400 text-2xl sm:text-4xl mb-4`}>
         Choose & pick
       </h2>
-      <h1 className="text-center text-4xl font-bold mb-10">
+      <h1 className="text-center text-2xl sm:text-4xl font-bold mb-10">
         <span className="text-[#FF9F0D]">Fr</span>om Our Menu
       </h1>
 
       {/* Category Buttons */}
-      <div className="flex justify-center space-x-8 text-lg font-semibold mb-10 flex-wrap">
+      <div className="flex justify-center flex-wrap gap-4 text-base sm:text-lg font-semibold mb-10">
         {categories.map((category) => (
           <button
             key={category}
-            className={`${selectedCategory === category ? 'text-orange-400' : 'text-white'
-              } hover:text-orange-400`}
+            className={`${selectedCategory === category ? 'text-orange-400' : 'text-white'} hover:text-orange-400`}
             onClick={() => setSelectedCategory(category)}
             aria-pressed={selectedCategory === category}
           >
@@ -55,9 +54,9 @@ export default function ChoosePick() {
         ))}
       </div>
 
-      <div className="flex flex-col md:flex-row items-center md:items-start">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10">
         {/* Image Section */}
-        <div className="relative flex-shrink-0 md:w-1/3 flex justify-center mb-8 md:mb-0">
+        <div className="relative flex-shrink-0 w-full lg:w-1/3 flex justify-center mb-8 lg:mb-0">
           {/* Back Image */}
           <div className="absolute inset-0 flex justify-center items-center opacity-60">
             <Image
@@ -65,7 +64,7 @@ export default function ChoosePick() {
               alt="Background Dish"
               width={650}
               height={506}
-              className="rounded-full w-full"
+              className="rounded-full w-full max-w-sm"
             />
           </div>
           {/* Front Image */}
@@ -74,12 +73,12 @@ export default function ChoosePick() {
             alt={`${selectedCategory} Dish`}
             width={400}
             height={400}
-            className="rounded-full w-3/4 transition-transform duration-500 hover:scale-105"
+            className="rounded-full w-3/4 max-w-xs transition-transform duration-500 hover:scale-105"
           />
         </div>
 
         {/* Items Grid */}
-        <div className="flex-1 grid grid-cols-2 gap-8 px-10">
+        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 px-4 sm:px-10">
           {filteredItems.map((item) => (
             <div key={item.name} className="flex items-center space-x-4">
               <Image
@@ -90,9 +89,9 @@ export default function ChoosePick() {
                 className="w-20 h-20 rounded-md transition-transform duration-300 hover:scale-110"
               />
               <div>
-                <h3 className="text-xl font-bold">{item.name}</h3>
-                <p className="text-sm text-gray-400">{item.description}</p>
-                <p className="text-orange-400 text-lg font-bold">{item.price}</p>
+                <h3 className="text-lg sm:text-xl font-bold">{item.name}</h3>
+                <p className="text-sm sm:text-base text-gray-400">{item.description}</p>
+                <p className="text-orange-400 text-base sm:text-lg font-bold">{item.price}</p>
               </div>
             </div>
           ))}
