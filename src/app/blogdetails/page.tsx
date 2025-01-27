@@ -1,16 +1,15 @@
+import Blogdetails1 from '@/components/blogdetails';
 import DigitalDetox from '@/components/blogDigitalDetox'
-import Sidebar from '@/components/blogssidebar'
 import Header2 from '@/components/Header2'
 import React from 'react'
 
 const blogdetails = () => {
     return (
         <div>
-            <Header2/>
+            <Header2 />
+            <Blogdetails1/>
             <DigitalDetox />
-            {/* <Sidebar /> */}
         </div>
-    )
+    );
 }
-
 export default blogdetails;

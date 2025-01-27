@@ -1,8 +1,7 @@
 import React from 'react'; 
 import Image from 'next/image';
-import { FaYoutube, FaTwitter, FaPinterest } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa6";
-import { AiFillInstagram } from "react-icons/ai";
+import { FaFacebook, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { AiFillInstagram } from 'react-icons/ai';
 
 export default function Footer() {
   const recentPosts = [
