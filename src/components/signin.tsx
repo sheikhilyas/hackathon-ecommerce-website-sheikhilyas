@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { Link } from "lucide-react";
 
 export default function SignIn() {
   return (
@@ -81,14 +82,9 @@ export default function SignIn() {
           <a href="#" className="text-orange-500 hover:underline">
             Forget password?
           </a>
-        </div>
-        <div className="relative my-6">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-300"></div>
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-white text-gray-500">OR</span>
-          </div>
+          <a href="/signup" className="text-orange-500 hover:underline">
+            Sign Up
+          </a>
         </div>
         <button
           type="button"

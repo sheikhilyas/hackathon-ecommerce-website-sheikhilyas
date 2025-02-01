@@ -99,6 +99,9 @@ export default function SignUp() {
           <a href="#" className="text-orange-500 hover:underline">
             Forget password?
           </a>
+          <a href="/signin" className="text-orange-500 hover:underline">
+            Signin
+          </a>
         </div>
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">

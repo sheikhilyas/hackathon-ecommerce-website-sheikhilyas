@@ -1,7 +1,8 @@
 import React from 'react'; 
 import Image from 'next/image';
-import { FaFacebook, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { AiFillInstagram } from 'react-icons/ai';
+import { FaFacebook, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa';
+
 
 export default function Footer() {
   const recentPosts = [
@@ -101,7 +102,7 @@ export default function Footer() {
       {/* Footer Bottom */}
       <div className="bg-gray-700 py-4">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-center md:text-left">&copy; 2024 by Sheikh Ilyas. All Rights Reserved.</p>
+          <p className="text-sm text-center md:text-left">&copy; 2025 by Sheikh Ilyas. All Rights Reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             {socialIcons.map((icon, index) => (
               <a

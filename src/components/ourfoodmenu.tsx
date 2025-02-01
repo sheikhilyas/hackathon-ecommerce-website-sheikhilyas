@@ -4,16 +4,16 @@ export default function Ourfoodmenu() {
   return (
     <div className="bg-white min-h-screen text-black">
       {/* Header Section */}
-      <div className="text-center py-12">
+      <div className="text-center py-12 px-4">
         <h1 className="text-4xl font-bold">Our Food Menu</h1>
         <p className="text-gray-400 mt-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br className="hidden sm:block" />
           Varius sed pharetra dictum neque massa congue.
         </p>
       </div>
 
       {/* Navigation Tabs */}
-      <div className="flex justify-center space-x-6 text-lg font-medium">
+      <div className="flex flex-wrap justify-center space-x-2 sm:space-x-6 text-lg font-medium px-4">
         <button className="text-orange-400 border-b-2 border-orange-400">
           Breakfast
         </button>
@@ -25,7 +25,7 @@ export default function Ourfoodmenu() {
       </div>
 
       {/* Menu Items in Two Columns */}
-      <div className="grid grid-cols-2 gap-6 mt-8 px-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 px-4 sm:px-12">
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
@@ -46,7 +46,7 @@ export default function Ourfoodmenu() {
       </div>
 
       {/* View Menu Button */}
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-10 px-4">
         <button className="bg-transparent border border-orange-400 text-orange-400 px-6 py-2 text-lg font-medium hover:bg-orange-400 hover:text-black">
           View menu
         </button>

@@ -9,6 +9,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import About from "@/components/wecreatethe";
 import BlogPost from "@/components/Blogpost";
 import Header from "@/components/Header";
+import ProductCards from "./products/page";
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Testimonial />
       <FoodProcessSection />
       <BlogPost/>
+      <ProductCards/>
     </div>
   );
 }

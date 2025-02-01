@@ -1,168 +1,210 @@
-import Image from 'next/image'; 
+import React from 'react';
+import Image from 'next/image';
 
-export default function ShopPage() {
+function ShopPage() {
+
+  const images = [
+    "/image90.png",
+    "/image59.png",
+    "/image50.png",
+    "/image61.png",
+    "/image62.png",
+    "/image63.png",
+    "/image66.png",
+    "/image64.png",
+    "/image65.png",
+    "/image61.png",
+    "/image62.png",
+    "/image63.png"
+  ];
+
+  const categories = [
+    { id: 'sandwiches', label: 'Sandwiches' },
+    { id: 'burger', label: 'Burger' },
+    { id: 'chicken', label: 'Chicken Chup' },
+    { id: 'drink', label: 'Drink' },
+    { id: 'pizza', label: 'Pizza' },
+    { id: 'nonveg', label: 'Non Veg' },
+    { id: 'uncategorized', label: 'Uncategorized' },
+  ];
+
+  const StarRating = () => (
+    <div className="flex items-center space-x-1">
+      {[...Array(3)].map((_, i) => (
+        <svg key={i} className="w-4 h-4" fill="#FF9F0D" viewBox="0 0 24 24">
+          <path d="M12 17.27l-6.18 3.41 1.64-7.03-5.52-4.78 7.19-.61L12 2l2.87 7.27 7.19.61-5.52 4.78 1.64 7.03L12 17.27z" />
+        </svg>
+      ))}
+    </div>
+  );
+
   return (
-    <div className="min-h-screen text-black bg-white font-sans">
-      <div className="container mx-auto py-10">
-        <div className="grid grid-cols-4 gap-8">
-          {/* Main Content */}
-          <main className="col-span-3">
-            {/* Menu Section */}
-            <div className="flex justify-between items-center mb-6 bg-white-900 p-4 rounded-lg">
-              <div className="flex items-center space-x-8">
-                <div className="flex items-center space-x-4">
-                  <label htmlFor="sort" className="text-sm text-black-300">Sort By:</label>
-                  <select id="sort" className="bg-white-800 text-gray p-2 rounded-lg">
-                    <option>Newest</option>
-                    <option>Price: Low to High</option>
-                    <option>Price: High to Low</option>
-                  </select>
+    <div className="bg-white min-h-screen py-8">
+      <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-8">
+        {/* Left Section */}
+        <div className="w-full lg:w-3/4">
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-8 bg-white p-4 rounded-lg shadow-sm">
+            <div className="flex items-center gap-4 mb-4 sm:mb-0">
+              <span className="text-lg font-medium">Sort By:</span>
+              <select className="border border-gray-300 rounded-lg px-4 py-2">
+                <option>Newest</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+              </select>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="text-lg font-medium">Show:</span>
+              <select className="border border-gray-300 rounded-lg px-4 py-2">
+                <option>12 Items</option>
+                <option>24 Items</option>
+                <option>36 Items</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-105"
+              >
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={image}
+                    alt={`Product ${index + 1}`}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <div className="flex items-center space-x-4">
-                  <label htmlFor="show" className="text-sm text-black-300">Show:</label>
-                  <select id="show" className="bg-white-800 text-gray p-2 rounded-lg">
-                    <option>Default</option>
-                    <option>25</option>
-                    <option>50</option>
-                  </select>
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold mb-2">Fresh Lime</h3>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#FF9F0D] text-xl font-bold">$38.00</span>
+                      <span className="text-gray-400 line-through">$45.00</span>
+                    </div>
+                    <button className="bg-[#FF9F0D] hover:bg-[#e68906] text-white px-4 py-2 rounded">
+                      Add to Cart
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
 
-            {/* Products Grid */}
-            <div className="grid grid-cols-3 gap-6">
-              {[
-                { name: 'Fresh Lime', price: 38, originalPrice: 45, img: '/image58.png' },
-                { name: 'Chocolate Muffin', price: 28, img: '/image59.png' },
-                { name: 'Burger', price: 21, originalPrice: 45, img: '/image60.png' },
-                { name: 'Country Burger', price: 45, img: '/image61.png' },
-                { name: 'Drink', price: 23, originalPrice: 45, img: '/image62.png' },
-                { name: 'Pizza', price: 43, img: '/image63.png' },
-                { name: 'Cheese Butter', price: 10, img: '/image66.png' },
-                { name: 'Sandwiches', price: 25, img: '/image64.png' },
-                { name: 'Chicken Chup', price: 12, img: '/image65.png' },
-              ].map((item, index) => (
-                <div key={index} className="bg-white-800 p-4 rounded-lg">
-                  {/* Product Image */}
-                  <Image
-                    src={item.img}
-                    alt={item.name}
-                    width={312}
-                    height={267}
-                    className="object-cover mb-4 rounded-lg"
+        {/* Right Section */}
+        <div className="w-full lg:w-1/4 space-y-8">
+          {/* Search */}
+          <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                placeholder="Search Products..."
+                className="flex-grow bg-gray-50 p-2 border border-gray-300 rounded"
+              />
+              <button className="bg-[#FF9F0D] hover:bg-[#e68906] text-white px-4 py-2 rounded">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Categories */}
+          <div className="bg-white p-6 rounded-lg">
+            <h2 className="text-xl font-bold mb-4">Categories</h2>
+            <div className="space-y-3">
+              {categories.map(({ id, label }) => (
+                <div key={id} className="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    id={id}
+                    className="w-4 h-4 text-[#FF9F0D] rounded"
                   />
-                  {/* Product Details */}
-                  <h3 className="text-lg font-semibold">{item.name}</h3>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-xl font-bold text-yellow-500">${item.price}</span>
-                    {item.originalPrice && (
-                      <span className="line-through text-gray-400">
-                        ${item.originalPrice}
-                      </span>
-                    )}
-                  </div>
+                  <label htmlFor={id} className="text-gray-700 hover:text-[#FF9F0D] cursor-pointer">
+                    {label}
+                  </label>
                 </div>
               ))}
             </div>
 
-            {/* Pagination */}
-            <div className="mt-10 flex justify-center space-x-4">
-              <button className="bg-gray-800 text-white px-4 py-2 rounded-lg">1</button>
-              <button className="bg-gray-800 text-white px-4 py-2 rounded-lg">2</button>
-              <button className="bg-gray-800 text-white px-4 py-2 rounded-lg">3</button>
-            </div>
-          </main>
-
-          {/* Sidebar */}
-          <aside className="col-span-1 bg-white-900 p-6 rounded-lg">
-            {/* Search Box */}
-            <div className="mb-6">
-              <input
-                type="text"
-                placeholder="Search Product"
-                className="w-full p-3 rounded-lg text-black"
-              />
-            </div>
-
-            {/* Category Section */}
-            <h2 className="text-lg font-bold mb-4 text-black-500">Category</h2>
-            <div className="space-y-2 text-black-300">
-              {['Sandwiches', 'Burger', 'Chicken Chup', 'Drink', 'Pizza', 'Thai', 'Non Veg', 'Uncategorized'].map(
-                (category) => (
-                  <div key={category} className="flex items-center">
-                    <input type="checkbox" id={category} className="mr-2" />
-                    <label htmlFor={category}>{category}</label>
-                  </div>
-                )
-              )}
-            </div>
-
-            {/* Banner Section */}
-            <div className="mt-8 bg-yellow-500 p-4 rounded-lg text-center">
+            {/* Styled Category Image */}
+            <div className="relative mt-4 rounded-lg overflow-hidden">
               <Image
-                src="/perfect-taste-banner.png"
-                alt="Perfect Taste"
-                width={600}
-                height={300}
-                className="w-full h-auto mb-4 rounded-lg"
+                src="/image86.png"
+                alt="Category Promotion"
+                width={300}
+                height={200}
+                className="object-cover"
               />
-              <h2 className="text-xl font-bold mb-2 text-black">Perfect Taste</h2>
-              <p className="text-black">Classic Restaurant</p>
-              <span className="text-2xl font-bold text-black">45.00$</span>
-              <button className="mt-4 bg-black text-white px-4 py-2 rounded-lg">Shop Now</button>
+              {/* Centered Text Overlay */}
+              <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex flex-col items-center justify-center text-center p-4">
+                <p className="text-sm text-white">Perfect Taste</p>
+                <h3 className="text-lg font-bold text-white">Classic Restaurant</h3>
+                <p className="text-lg text-[#FF9F0D] font-bold">$45.00</p>
+                <button className="mt-2 bg-[#FF9F0D] hover:bg-[#e68906] text-white px-4 py-2 rounded">
+                  Shop Now ➜
+                </button>
+              </div>
             </div>
+          </div>
 
-            {/* Price Filter */}
-            <div className="mt-10">
-              <h2 className="text-lg font-bold mb-4 text-black-500">Filter By Price</h2>
-              <input type="range" min="0" max="8000" className="w-full" />
-              <div className="mt-2 flex justify-between text-black-300">
+
+
+          {/* Price Filter */}
+          <div className="bg-white p-6 rounded-lg shadow-sm">
+            <h2 className="text-xl font-bold mb-4">Filter by Price</h2>
+            <div className="space-y-4">
+              <input
+                type="range"
+                min="0"
+                max="8000"
+                className="w-full"
+              />
+              <div className="flex justify-between text-sm text-gray-600">
                 <span>$0</span>
                 <span>$8000</span>
               </div>
+              <button className="w-full bg-[#FF9F0D] hover:bg-[#e68906] text-white px-4 py-2 rounded">
+                Apply Filter
+              </button>
             </div>
+          </div>
 
-            {/* Latest Products */}
-            <div className="mt-8">
-              <h2 className="text-lg font-bold mb-4 text-black-500">Latest Products</h2>
-              <ul className="space-y-4 text-black-300">
-                {['Pizza', 'Cupcake', 'Cookies', 'Burger'].map((product, index) => (
-                  <li key={product} className="flex items-center space-x-2">
+          {/* Latest Products */}
+          <div className="bg-white p-6 rounded-lg shadow-sm">
+            <h2 className="text-xl font-bold mb-4">Latest Products</h2>
+            <div className="space-y-4">
+              {[
+                { id: 1, name: "Premium Pizza", price: "$45.00", image: "/image85.png" },
+                { id: 2, name: "Cheese Burger", price: "$38.00", image: "/image85.png" },
+                { id: 3, name: "Chicken Wings", price: "$25.00", image: "/image85.png" },
+                { id: 4, name: "Fresh Juice", price: "$15.00", image:  "/image85.png" },
+              ].map((product) => (
+                <div key={product.id} className="flex gap-4 items-center">
+                  <div className="relative h-16 w-16 flex-shrink-0">
                     <Image
-                      src={`/image52${index + 1}.png`}
-                      alt={product}
-                      width={48}
-                      height={48}
-                      className="object-cover rounded-lg"
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover rounded"
                     />
-                    <div>
-                      <p>{product}</p>
-                      <p className="text-yellow-500">$35.00</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-medium">{product.name}</h3>
+                    <StarRating />
+                    <p className="text-[#FF9F0D] font-semibold">{product.price}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-
-            {/* Product Tags */}
-            <div className="mt-10">
-              <h2 className="text-lg font-bold mb-4 text-black-500">Product Tags</h2>
-              <div className="flex flex-wrap gap-2">
-                {['Services', 'Our Menu', 'Pizza', 'Cupcake', 'Burger', 'Cookies', 'Our Shop', 'Tandoori Chicken'].map(
-                  (tag) => (
-                    <span
-                      key={tag}
-                      className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
-                    >
-                      {tag}
-                    </span>
-                  )
-                )}
-              </div>
-            </div>
-          </aside>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
+export default ShopPage;
+
