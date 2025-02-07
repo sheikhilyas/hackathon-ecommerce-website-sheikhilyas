@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { Link } from "lucide-react";
 
 export default function SignIn() {
   return (
@@ -91,7 +90,7 @@ export default function SignIn() {
           className="flex items-center justify-center w-full px-4 py-2 mb-3 text-gray-700 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200"
         >
           <Image
-            src="/Google.png" // Path to image
+            src="/Google.png" 
             alt="Google logo"
             width={20}
             height={20}
