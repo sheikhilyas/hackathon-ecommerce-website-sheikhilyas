@@ -6,7 +6,7 @@ import { Menu, X, Search, ShoppingCart, User } from 'lucide-react';
 
 export default function Header2() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null); 
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null); 
 
   const menuItems = [
     { name: "Home", href: "/", active: true },
@@ -20,7 +20,8 @@ export default function Header2() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const toggleDropdown = (dropdownName) => {
+  // Typed 'dropdownName' as 'string | null'
+  const toggleDropdown = (dropdownName: string | null) => {
     setOpenDropdown((prev) => (prev === dropdownName ? null : dropdownName));
   };
 
@@ -64,7 +65,7 @@ export default function Header2() {
                     </button>
                     {openDropdown === item.name && (
                       <div className="absolute left-0 mt-2 bg-[#0D0D0D] text-white rounded-md shadow-lg w-40 z-10">
-                        <ul className="py-2 text-left"> {/* Added text-left class here */}
+                        <ul className="py-2 text-left">
                           {/* Blog Dropdown Items */}
                           {item.name === "Blog" && (
                             <>
