@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 export default function Header() {
-  const [openDropdown, setOpenDropdown] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const toggleDropdown = (dropdownName) => {
+  const toggleDropdown = (dropdownName: string | null) => {
     setOpenDropdown((prev) => (prev === dropdownName ? null : dropdownName));
   };
+  
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen((prev) => !prev);
