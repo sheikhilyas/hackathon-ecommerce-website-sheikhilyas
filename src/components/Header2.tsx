@@ -1,5 +1,4 @@
-'use client';
-
+'use client'; 
 import { useState } from 'react';
 import Link from "next/link";
 import { Menu, X, Search, ShoppingCart, User } from 'lucide-react';
@@ -37,14 +36,13 @@ export default function Header2() {
         </Link>
 
         {/* Mobile Menu Toggle */}
-        <p
-          variant="ghost"
+        <button
           className="lg:hidden hover:text-white text-white z-50"
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </p>
+        </button>
 
         {/* Navigation Links */}
         <div className={`fixed inset-0 bg-[#0D0D0D] flex flex-col items-center justify-center gap-6 lg:static lg:flex-row lg:bg-transparent lg:gap-[32px] transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 visible translate-x-0' : 'opacity-0 invisible translate-x-full lg:translate-x-0 lg:opacity-100 lg:visible'} absolute top-0 left-0 w-full h-screen lg:h-auto`}>
